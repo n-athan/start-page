@@ -5,7 +5,7 @@ function startTime() {
     var m=today.getMinutes();
     m=checkTime(m);
     document.getElementById('txt').innerHTML=h+' '+m;
-    t=setTimeout('startTime()',500);
+    t=setTimeout('startTime()',3000);
 }
 // add a zero in front of numbers<10
 function checkTime(i) {

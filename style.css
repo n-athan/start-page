@@ -99,7 +99,9 @@ body{
 .sun {
     grid-area: sun;
     height: 20vmin;
+    maxheight: 200px;
     width: 20vmin;
+    maxwidth: 200px;
     background-color: yellow;
     border-radius: 50%;   
     justify-self: start;
