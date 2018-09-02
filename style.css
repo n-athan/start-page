@@ -15,14 +15,14 @@ body{
     display: grid;
     grid-template: 
         ". time time day . square1" minmax(auto,4.7em)
-        ". . bar day . square2" minmax(auto, 2fr) 
-        ". . bar day . square3" minmax(auto, 2fr)
-        "gr_vert sun bar day . ." minmax(auto, 4fr)
+        ". . bar day . square2" minmax(auto, 4fr) 
+        ". . bar day . square3" minmax(auto, 4fr)
+        "gr_vert sun bar day . ." 40%
         "gr_vert sun bar dbar dbar dbar" auto
         "gr_vert sun bar quote quote quote" auto
         ". gr_horz bar quote quote quote" auto
         ". . bar quote quote quote" auto
-        / min-content auto minmax(auto, 2fr) min-content minmax(20px,100px) minmax(20px,100px);
+        / auto min-content min-content 2.5em minmax(20px,100px) minmax(20px,100px);
     grid-gap: 2px;
     transform: rotate(-45deg);
 }
@@ -50,6 +50,7 @@ body{
     font-size: 2em;
     padding-top: 1em;
     justify-self: start;
+    width: 100%;
 }
 
 .gr_horz {
