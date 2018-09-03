@@ -12,18 +12,23 @@ body{
 }
 
 .grid {
+    display: -ms-grid;
     display: grid;
     grid-template: 
         ". time time day . square1" minmax(auto,4.7em)
         ". . bar day . square2" minmax(auto, 4fr) 
         ". . bar day . square3" minmax(auto, 4fr)
-        "gr_vert sun bar day . ." 30vh
+        "gr_vert sun bar day . ." 40%
         "gr_vert sun bar dbar dbar dbar" auto
         "gr_vert sun bar quote quote quote" auto
         ". gr_horz bar quote quote quote" auto
         ". . bar quote quote quote" auto
         / auto min-content min-content 2.5em minmax(20px,100px) minmax(20px,100px);
     grid-gap: 2px;
+    display: -ms-grid;
+    -ms-grid-columns: 2em 250px 50px 2.5em 100px 100px;
+    -ms-grid-rows: 4.7em 4em 4em 40% 2em 10% 2em 10%;
+    -ms-grid-gap: 2px;
     transform: rotate(-45deg);
 }
 
@@ -39,8 +44,10 @@ body{
     line-height: 1;
     justify-self: end;
     padding: 0px;
-    margin: -10px -10px 0 -10px;
+    margin: -10px -10px 0 0;
     align-self: top;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
 }
 
 .day {
@@ -50,9 +57,11 @@ body{
     font-size: 2em;
     padding-top: 1em;
     justify-self: start;
-    align-self: start;
     width: 100%;
-    white-space: nowrap; 
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 4;
+    -ms-grid-column: 4;
+    -ms-writing-mode: tb-rl;
 }
 
 .gr_horz {
@@ -61,7 +70,11 @@ body{
     transform: rotate(180deg);
     text-align: end;
     font-size: 1.5em;
-    margin-top: -5px;}
+    margin-top: -5px;
+    -ms-grid-row: 7;
+    -ms-grid-column: 2;
+    -ms-grid-row-align: end;
+}
 
 .gr_vert {
     grid-area: gr_vert;
@@ -70,6 +83,10 @@ body{
     transform: rotate(180deg);
     font-size: 1.5em;
     margin-right: -5px;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 1;
+    -ms-writing-mode: tb-rl;
 }
 
 .quote {
@@ -78,6 +95,10 @@ body{
     text-align: justify;
     font-weight: 700;
     font-size: 1.2em;
+    -ms-grid-row: 6;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 3;
 }
 
 .bar{
@@ -89,6 +110,9 @@ body{
     writing-mode: vertical-lr;
     height: 100%;
     margin-left: 20px;
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 7;
+    -ms-grid-column: 3;
 }
 
 .dubblebar {
@@ -96,7 +120,9 @@ body{
     border-bottom: 5px double black;
     width: 103%;
     margin-left: -2em;
-
+    -ms-grid-row: 5;
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 3;
 }
 
 .sun {
@@ -107,6 +133,11 @@ body{
     border-radius: 50%;   
     justify-self: start;
     align-self: end;
+    -ms-grid-row: 4;
+    -ms-grid-row-span: 3;
+    -ms-grid-column: 2;
+    -ms-grid-row-align: start;
+    -ms-grid-column-align: end;
 }
 
 .square1 {
@@ -116,6 +147,8 @@ body{
     background-color: black;
     margin-bottom: 5px;
     justify-self: end;
+    -ms-grid-row: 1;
+    -ms-grid-column: 6;
 }
 .square2 {
     grid-area: square2;
@@ -125,6 +158,8 @@ body{
     margin-bottom: 5px;
     justify-self: end;
     align-self: center;
+    -ms-grid-row: 2;
+    -ms-grid-column: 6;
 }
 
 .square3 {
@@ -134,6 +169,8 @@ body{
     background-color: black;
     margin-bottom: 5px;
     justify-self: end;
+    -ms-grid-row: 3;
+    -ms-grid-column: 6;
 }
 
 @media only screen and (max-width: 650px) {

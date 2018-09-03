@@ -3,6 +3,7 @@ function startTime() {
     var today=new Date();
     var h=today.getHours();
     var m=today.getMinutes();
+    h=checkTime(h);
     m=checkTime(m);
     document.getElementById('txt').innerHTML=h+' '+m;
     t=setTimeout('startTime()',3000);
